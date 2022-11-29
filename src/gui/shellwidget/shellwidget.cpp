@@ -352,7 +352,7 @@ QFont ShellWidget::GetCellFont(const Cell& cell) const noexcept
 	// but we want to match the family name with the bold/italic attributes.
 	cellFont.setStyleName({});
 
-	cellFont.setStyleHint(QFont::TypeWriter, QFont::StyleStrategy(QFont::PreferDefault | QFont::ForceIntegerMetrics));
+    cellFont.setStyleHint(QFont::TypeWriter);
 	cellFont.setFixedPitch(true);
 	cellFont.setKerning(false);
 
@@ -1037,7 +1037,7 @@ QVariant ShellWidget::TryGetQFontFromDescription(const QString& fdesc) const noe
 	QFont font{ attrs.at(0), -1 /*pointSize*/, weight, italic };
 
 	font.setPointSizeF(pointSizeF);
-	font.setStyleHint(QFont::TypeWriter, QFont::StyleStrategy(QFont::PreferDefault | QFont::ForceIntegerMetrics));
+    font.setStyleHint(QFont::TypeWriter);
 	font.setFixedPitch(true);
 	font.setKerning(false);
 
