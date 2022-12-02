@@ -27,7 +27,7 @@ if(WIN32)
     )
 endif()
 
-target_link_libraries(neovim-qt PUBLIC Qt5::Network msgpackc-static)
+target_link_libraries(neovim-qt PUBLIC Qt::Network msgpackc-static)
 
 add_subdirectory(auto)
 add_subdirectory(gui)

@@ -8,9 +8,9 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Qt
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 if(ENABLE_TESTS)
-    find_package(Qt5 REQUIRED COMPONENTS Test)
+    find_package(Qt6 REQUIRED COMPONENTS Test)
 endif()
 
 if (WIN32 AND USE_STATIC_QT)
@@ -37,7 +37,7 @@ target_sources(qshellwidget
     shellwidget.h
 )
 
-target_link_libraries(qshellwidget PUBLIC Qt5::Widgets)
+target_link_libraries(qshellwidget PUBLIC Qt::Widgets)
 
 add_executable(example EXCLUDE_FROM_ALL example.cpp)
 target_link_libraries(example PRIVATE qshellwidget)
@@ -49,4 +49,4 @@ add_executable(example3 EXCLUDE_FROM_ALL example3.cpp)
 target_link_libraries(example3 PRIVATE qshellwidget)
 
 add_executable(fontinfo EXCLUDE_FROM_ALL fontinfo.cpp)
-target_link_libraries(fontinfo PRIVATE Qt5::Widgets)
+target_link_libraries(fontinfo PRIVATE Qt::Widgets)

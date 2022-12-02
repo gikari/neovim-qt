@@ -131,7 +131,8 @@ include(MacOSXPaths)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt5 5.8 REQUIRED COMPONENTS Core Network Svg Widgets)
+find_package(Qt6
+    REQUIRED COMPONENTS Core Network Widgets SvgWidgets)
 
 # msgpack
 option(USE_SYSTEM_MSGPACK "Use system msgpack libraries " OFF)
@@ -166,7 +167,7 @@ add_subdirectory(doc)
 
 option(ENABLE_TESTS "Build tests" OFF)
 if(ENABLE_TESTS)
-    find_package(Qt5 REQUIRED COMPONENTS Test)
+    find_package(Qt6 REQUIRED COMPONENTS Test)
 	enable_testing()
 	add_subdirectory(test)
 	add_subdirectory(src/gui/shellwidget/test)

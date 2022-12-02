@@ -1,12 +1,12 @@
-set(QTLIBS Qt5::Network Qt5::Svg Qt5::Widgets)
+set(QTLIBS Qt::Network Qt::Svg Qt::Widgets Qt::SvgWidgets)
 
 include_directories(.. shellwidget)
 
 if(WIN32)
 	if (USE_STATIC_QT)
 		add_definitions(-DUSE_STATIC_QT)
-		link_directories(${CMAKE_PREFIX_PATH}/share/qt5/plugins/platforms)
-        list(APPEND QTLIBS Qt5PlatformCompositorSupport qwindows)
+        link_directories(${CMAKE_PREFIX_PATH}/share/qt6/plugins/platforms)
+        list(APPEND QTLIBS QtPlatformCompositorSupport qwindows)
 	endif()
 	set(RES_FILE "data.rc")
 	enable_language(RC)
@@ -135,7 +135,7 @@ endif()
 
 if(WIN32 AND NOT CMAKE_CROSSCOMPILING AND NOT DEFINED USE_STATIC_QT)
 	include(WinDeployQt)
-	WinDeployQt(TARGET nvim-qt COMPILER_RUNTIME INCLUDE_MODULES ${QTLIBS} EXCLUDE_MODULES webkit webkit2)
+    WinDeployQt(TARGET nvim-qt COMPILER_RUNTIME INCLUDE_MODULES ${QTLIBS})
     install(
         DIRECTORY ${PROJECT_BINARY_DIR}/windeployqt/
         DESTINATION ${CMAKE_INSTALL_BINDIR}
