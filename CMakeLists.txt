@@ -143,7 +143,7 @@ else()
 endif()
 
 if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
-    add_compile_definitions(-DQT_NO_DEBUG_OUTPUT)
+	add_compile_definitions(QT_NO_DEBUG_OUTPUT)
 endif()
 
 # Place targets in bin/ or lib/ for all build configurations
@@ -159,7 +159,7 @@ endforeach()
 
 if(MSVC)
   # Allow use of deprecated function names in MSVC (read/write)
-  add_compile_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
+  add_compile_definitions(_CRT_NONSTDC_NO_DEPRECATE)
 endif()
 
 add_subdirectory(src)

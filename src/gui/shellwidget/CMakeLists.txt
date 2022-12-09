@@ -14,7 +14,7 @@ if(ENABLE_TESTS)
 endif()
 
 if (WIN32 AND USE_STATIC_QT)
-    add_compile_definitions(-DUSE_STATIC_QT)
+    add_compile_definitions(USE_STATIC_QT)
 endif ()
 
 add_library(qshellwidget STATIC)

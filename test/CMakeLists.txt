@@ -4,7 +4,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 add_definitions(-DCMAKE_SOURCE_DIR=\"${CMAKE_SOURCE_DIR}\")
 add_definitions(-DNVIM_QT_BINARY=\"$<TARGET_FILE:nvim-qt>\")
 if (WIN32 AND USE_STATIC_QT)
-    add_compile_definitions(-DUSE_STATIC_QT)
+	add_compile_definitions(USE_STATIC_QT)
 endif ()
 
 add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND})
