@@ -18,3 +18,5 @@ FetchContent_Declare(
     URL_HASH SHA256=ff865a36bad5c72b8e7ebc4b7cf5f27a820fce4faff9c571c1791e3728355a39
 )
 FetchContent_MakeAvailable(msgpackc)
+
+target_compile_features(msgpackc-static PRIVATE cxx_std_11)
